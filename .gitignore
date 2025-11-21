@@ -1,0 +1,16 @@
+# Entornos virtuales
+venv/
+.env/
+*.env
+
+# Archivos de base de datos locales
+*.db
+
+# Archivos de configuración locales
+__pycache__/
+*.pyc
+*.log
+
+# Configs sensibles
+*.sqlite
+secrets.json

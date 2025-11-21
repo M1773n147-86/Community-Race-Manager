@@ -1,0 +1,34 @@
+version: 1
+
+formatters:
+  standard:
+    format: "%(asctime)s [%(levelname)s] %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+    stream: ext://sys.stdout
+
+  file_rotating:
+    class: logging.handlers.TimedRotatingFileHandler
+    level: INFO
+    formatter: standard
+    filename: logs/runtime.log
+    when: midnight          # rotación diaria
+    interval: 1             # cada 1 día
+    backupCount: 14         # mantiene 14 días
+    encoding: utf-8
+    utc: false              # usa hora local
+
+loggers:
+  PROD_Logger:
+    level: INFO
+    handlers: [console, file_rotating]
+    propagate: no
+
+root:
+  level: WARNING
+  handlers: [console]

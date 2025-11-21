@@ -1,0 +1,18 @@
+# --- Librerías principales del bot ---
+discord.py==2.3.2
+
+# --- Base de datos (SQLite asíncrono) ---
+aiosqlite==0.19.0
+
+# --- Variables de entorno ---
+python-dotenv==1.0.1
+
+# --- Colores en terminal ---
+colorama==0.4.6
+
+# --- Logging YAML (solo si usas config por YAML) ---
+# Si NO quieres usar YAML, elimina esta línea:
+PyYAML==6.0.1
+
+# --- Utilidades generales ---
+typing_extensions==4.9.0

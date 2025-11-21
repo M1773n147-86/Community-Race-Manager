@@ -1,0 +1,4 @@
+2025-11-01 00:27:18,550 [INFO] 🚀 [TEST] Inicio de prueba de logging.
+2025-11-01 00:27:18,550 [WARNING] ⚠️ [TEST] Este es un aviso de prueba.
+2025-11-01 00:27:18,550 [ERROR] ❌ [TEST] Simulación de error crítico.
+2025-11-01 00:27:18,550 [INFO] 🕒 [TEST] Timestamp de ejecución: 2025-11-01 00:27:18.550225

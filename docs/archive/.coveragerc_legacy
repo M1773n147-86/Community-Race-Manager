@@ -1,0 +1,57 @@
+# ============================================================
+# Community Race Manager — Configuración de cobertura Pytest
+# ============================================================
+
+[run]
+# Incluir solo módulos con lógica interna o de datos
+source = src
+
+# Omitir archivos no testeables o de integración directa con Discord
+omit =
+    # Archivos raíz y utilitarios
+    src/bot.py
+    src/main.py
+    src/logger.py
+    */__init__.py
+
+    # Cogs de interacción directa con Discord (UI / comandos)
+    src/cogs/general.py
+    src/cogs/fun.py
+    src/cogs/moderation.py
+    src/cogs/permissions.py
+    src/cogs/events.py
+
+    # Cogs Wizard base (no se testean directamente, dependen de Discord)
+    src/cogs/wizard/create_event.py
+    src/cogs/wizard/event_wizard.py
+    src/cogs/wizard/manage_events.py
+
+    # Pruebas y datos temporales
+    src/tests/*
+    src/data/*
+
+[report]
+# Mostrar archivos omitidos para revisión si fuera necesario
+show_missing = True
+skip_covered = False
+
+# Ignorar líneas sin relevancia para cobertura
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    if TYPE_CHECKING:
+    def __repr__
+    def __str__
+    def __init__
+
+    @abstractmethod
+    @property
+    pass
+    print(
+    logger.
+    log.
+    raise NotImplementedError
+
+# Resumen de errores y avisos
+fail_under=40
+precision=1
